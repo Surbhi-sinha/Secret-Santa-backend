@@ -44,15 +44,18 @@ const fs = __importStar(require("fs"));
 const csv_reader_1 = __importDefault(require("./csv_reader"));
 const csv_generater_1 = __importDefault(require("./csv_generater"));
 const SecretSantaCreator_1 = require("./SecretSantaCreator");
-// actual logic
-// import { SecretSantaCreator } from "./SecretSantaCreator";
-// const useHistory = Math.random() > 0.5; // Simulating a condition
-// const secretSanta = SecretSantaCreator.createSecretSanta(useHistory);
-// secretSanta.assignSecretChild();
-// secretSanta.buildCsv();
 // server code
 const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({
+    origin: [
+        "http://localhost:3000",
+        "https://  secret-santa-frontend-kvh43iwy3-surbhi-sinhas-projects.vercel.app",
+        "https://secret-santa-frontend-self.vercel.app",
+    ],
+    credentials: true, // If using cookies or authentication
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+}));
 const upload = multer({ dest: "uploads/" });
 app.get("/", (req, res) => {
     res.send("Hi from server");
