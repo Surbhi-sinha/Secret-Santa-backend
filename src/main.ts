@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://  secret-santa-frontend-kvh43iwy3-surbhi-sinhas-projects.vercel.app",
+      "https://secret-santa-frontend-kvh43iwy3-surbhi-sinhas-projects.vercel.app",
       "https://secret-santa-frontend-self.vercel.app",
     ],
     credentials: true, // If using cookies or authentication
